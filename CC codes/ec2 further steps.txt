@@ -1,0 +1,13 @@
+sudo su -      (go to the root directory)
+yum update -y   (update)
+yum install httpd -y     (install apache web server)
+systemctl status httpd    (status inactive)
+mkdir temp 
+cd temp/
+wget link 
+unzip main.cpp
+ls  (to check file name)
+cd file_name  
+mv * /var/www/html/    (move files to the apache directory) default root directory for websites 
+systemctl enable httpd 
+systemctl start httpd 

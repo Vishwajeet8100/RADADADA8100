@@ -1,0 +1,40 @@
+Here’s the extracted text from both notebook pages you shared, with slight corrections for clarity and grammar:
+
+⸻
+
+Page 1: Apex and Visualforce
+
+Apex is a strongly typed, object-oriented programming language developed by Salesforce.
+	•	It is similar to Java-like syntax.
+	•	It is used to develop custom business logic and automate processes on the Salesforce platform, particularly for backend development within Salesforce applications.
+
+Visualforce Pages:
+	•	It is a framework developed by Salesforce which allows developers to create custom user interfaces (UIs) for Salesforce applications.
+	•	It is a tag-based markup language similar to HTML.
+Example:
+
+<apex:page>
+  Hello, welcome to my UI!
+</apex:page>
+
+
+
+⸻
+
+Page 2: Salesforce
+	1.	Salesforce is Software as a Service (SaaS), as it provides ready-to-use applications on the web.
+Example: CRM (Customer Relationship Management)
+	2.	It also acts as a Platform as a Service (PaaS), as it allows us to build custom applications using tools like Apex, Visualforce, and Lightning components.
+	3.	Salesforce is cloud-based and primarily serves as a Customer Relationship Management (CRM) platform.
+	•	It helps businesses manage customer relationships, sales, and more.
+	•	Widely used to automate business processes.
+
+⸻
+
+Corrections/Recommendations:
+	•	“Homewoke” → should be “framework”
+	•	“develop” → corrected to “developers” in the context.
+	•	Spelling of “particularly,” “relationship,” and “automate” were slightly off in the original; corrected above.
+	•	Sentence clarity improved for better technical understanding.
+
+Would you like this cleaned-up content as a PDF or note summary?

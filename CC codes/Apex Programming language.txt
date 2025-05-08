@@ -1,0 +1,90 @@
+apxc file for calculator :
+
+
+public class CalculatorController {
+    public Decimal num1 { get; set; }
+    public Decimal num2 { get; set; }
+    public String operation { get; set; }
+    public Decimal result { get; set; }
+
+    // Dropdown options for operations
+    public List<SelectOption> getOperations() {
+        return new List<SelectOption>{
+            new SelectOption('add','Add'),
+            new SelectOption('sub','Subtract'),
+            new SelectOption('mul','Multiply'),
+            new SelectOption('div','Divide')
+        };
+    }
+
+    // Perform calculation
+    public void calculate() {
+        if (operation == 'add') result = num1 + num2;
+        else if (operation == 'sub') result = num1 - num2;
+        else if (operation == 'mul') result = num1 * num2;
+        else if (operation == 'div') {
+            if (num2 != 0) result = num1 / num2;
+            else ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Cannot divide by zero'));
+        }
+    }
+}
+===========================================================================================================
+
+visulaforce page file for calculator :
+
+
+<apex:page controller="CalculatorController">
+    <h2>Simple Calculator</h2>
+    <apex:form>
+        <p>Enter Number 1:</p>
+        <apex:inputText value="{!num1}" /><br/><br/>
+
+        <p>Enter Number 2:</p>
+        <apex:inputText value="{!num2}" /><br/><br/>
+
+        <p>Select Operation:</p>
+        <apex:selectList value="{!operation}" size="1">
+            <apex:selectOptions value="{!operations}" />
+        </apex:selectList><br/><br/>
+
+        <apex:commandButton value="Calculate" action="{!calculate}" /><br/><br/>
+
+        <apex:outputLabel value="Result: " />
+        <apex:outputText value="{!result}" style="font-weight:bold;" />
+
+        <apex:messages />
+    </apex:form>
+</apex:page>
+
+
+
+==============================================================================================================
+
+simple calculator : 
+
+public class Calculator {
+    public static integer add(integer a, integer b){
+        return a+b;
+    }
+    public static integer subtract(integer a, integer b){
+        return a-b;
+    }
+    public static integer multiply(integer a, integer b){
+        return a*b;
+    }
+    public static integer divide(integer a, integer b){
+        return a/b;
+    }
+}
+
+=========================================================================================================
+
+can add exception as  :
+
+public static Integer divide(Integer a, Integer b) {
+    if (b == 0) {
+        // Handle division by zero
+        throw new ArithmeticException('Cannot divide by zero');
+    }
+    return a / b;
+}
